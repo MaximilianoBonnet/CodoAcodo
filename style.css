@@ -1,5 +1,31 @@
-.body {
-    background-image: url(logos/New-Logo-Institut.jpg);
+.nav-item {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.imgNav {
+    width: 80px;
+    height: 65px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.carouselSlide {
+    padding-bottom: 25px;
+}
+
+input[type="radio"]:checked~label {
+    color: orange;
+}
+
+.clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+body {
+    background-image: url(img/logos/New-Logo-Institut.jpg);
     filter: alpha(opacity=40);
     height: 100%;
     width: 100%;
@@ -27,4 +53,107 @@
     -moz-border-radius: 35px 0px 35px 0px;
     -webkit-border-radius: 35px 0px 35px 0px;
     border: 2px solid #000103;
+}
+
+.body-QuienesSomos {
+    background-image: none !important;
+}
+
+.flex-container {
+    background-color: #FCFFA6;
+    width: 570px;
+    height: auto;
+    text-align: auto;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 5%;
+    margin-top: 2%;
+    margin-left: 5%;
+    border-radius: 5px;
+    text-justify: auto;
+}
+
+.display-6 {
+    text-align: right;
+    color: rgba(0, 0, 0, 0.5);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-right: 30px;
+    border-radius: 5 0px;
+    float: inline-end;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.titleQuienesSomos {
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    color: #f6f8f8;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    background: #050500;
+    margin: 0 0 25px;
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 35px 0px 35px 0px;
+    -moz-border-radius: 35px 0px 35px 0px;
+    -webkit-border-radius: 35px 0px 35px 0px;
+    border: 2px solid #010511;
+}
+
+.accordion-body {
+    background-color: #FCFFA6;
+    width: auto;
+    height: auto;
+    text-align: auto;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 5%;
+    margin-top: 2%;
+    border-radius: 20px;
+    text-justify: auto;
+}
+
+.administrador {
+    background-color: #FCFFA6;
+    width: 250px;
+    height: auto;
+    text-align: center;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 5%;
+    margin-top: 2%;
+    margin-left: 2%;
+    border-radius: 5px;
+    text-justify: auto;
+}
+
+.carousel-item {
+    margin-top: 50px;
+}
+
+.cardfooter {
+    /* Like the header, the footer will have a static height - it shouldn't grow or shrink.  */
+    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 0 0 auto;
+}
+
+.cards {
+    width: 10rem;
+    height: auto;
+    color: black;
+    background-color: #f6f8f8
+}
+
+.formulariocomentarios {
+    width: 700px;
+    height: auto;
+    text-align: center;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 5%;
+    margin: 2%;
+    background-color: #f6f8f8
 }
