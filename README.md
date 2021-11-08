@@ -1,2 +1,0 @@
-# CodoAcodo
-Trabajo practico
