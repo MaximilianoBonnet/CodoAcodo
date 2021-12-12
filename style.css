@@ -1,103 +1,37 @@
-header {
-    width: 100%;
-    /* Establecemos que el header abarque el 100% del documento */
-    overflow: hidden;
-    /* Eliminamos errores de float */
-    background: #787c7b;
-    margin-bottom: 20px;
-    margin: 5 5 10px;
-    padding: 2px;
-    border-radius: 10px 5px 10px 5px;
-    -moz-border-radius: 10px 0px 10px 0px;
-    -webkit-border-radius: 10px 5px 10px 5px;
-    border: 1px solid #050500;
-}
-
-.wrapper {
-    width: 90%;
-    /* Establecemos que el ancho sera del 90% */
-    max-width: 1000px;
-    /* Aqui le decimos que el ancho máximo sera de 1000px */
-    margin: auto;
-    /* Centramos los elementos */
-    overflow: hidden;
-    /* Eliminamos errores de float */
-}
-
-header .logo {
-    color: #f2f2f2;
-    font-size: 70px;
-    line-height: 150px;
-    float: left;
-}
-
-header nav {
-    float: right;
-    line-height: 150px;
-}
-
-header nav a {
-    display: inline-block;
-    color: #fff;
-    text-decoration: solid;
-    padding: 10px 20px;
-    line-height: normal;
-    font-size: 20px;
-    font-weight: bold;
-    -webkit-transition: all 500ms ease;
-    -o-transition: all 500ms ease;
-    transition: all 500ms ease;
-}
-
-header nav a:hover {
-    background: #d60505;
-    border-radius: 50px;
-}
-
-.header2 {
-    position: fixed;
-    height: 100px;
-}
-
-.header2 .logo {
-    line-height: 100px;
-    font-size: 30px;
-}
-
-.header2 nav {
-    line-height: 100px;
-}
-
-@media screen and (max-width: 950px) {
-    header .logo,
-    header nav {
-        width: 100%;
-        text-align: center;
-        /*Centramos el menu y el logotipo*/
-        line-height: 100px;
-    }
-    .header2 {
-        height: auto;
-    }
-    .header2 .logo,
-    .header2 nav {
-        line-height: 50px;
-    }
-}
-
-header,
-header nav,
-header nav .logo {
-    -webkit-transition: height 0.3s;
-    -moz-transition: height 0.3s;
-    -ms-transition: height 0.3s;
-    -o-transition: height 0.3s;
-    transition: height 0.3s;
+.nav-item {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .imgNav {
     width: 80px;
     height: 65px;
+}
+
+.logo {
+    width: 130px;
+    cursor: pointer;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li::before {
+    content: "";
+    height: 3px;
+    width: 0%;
+    background: #0d0e00;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s ease-out;
+}
+
+.navbar ul li:hover::before {
+    width: 100%;
 }
 
 input[type="radio"] {
@@ -118,7 +52,7 @@ input[type="radio"]:checked~label {
 }
 
 body {
-    background-color: rgba(180, 170, 157, 0.664);
+    background-color: rgba(247, 245, 224, 0.664);
     filter: alpha(opacity=40);
     height: 100%;
     width: 100%;
@@ -258,19 +192,207 @@ body {
 
 .cards {
     width: 10rem;
-    height: 25rem;
+    height: 29rem;
     color: black;
     background-color: #f6f8f8
 }
 
 .formulariocomentarios {
-    width: 700px;
+    width: 120%;
     height: auto;
-    text-align: center;
-    padding-left: 1%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    background: #ffffff;
+    text-align: auto;
     border: 5%;
-    margin: 2%;
-    background-color: #f6f8f8
+    margin: auto;
+    display: block;
+    align-content: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    border: 2px;
+}
+
+.login {
+    position: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    padding: 40px;
+    background: rgba(233, 100, 12, 0.8);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(61, 59, 59, 0.5);
+    border-radius: 10px;
+}
+
+.login h1 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: rgb(9, 53, 248);
+    text-align: center;
+}
+
+.login .inputlogin {
+    position: relative;
+}
+
+.login .inputlogin input {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: rgb(10, 9, 9);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid rgb(236, 14, 14);
+    outline: none;
+    background: transparent;
+}
+
+.login .inputlogin label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px 0;
+    font-size: 16px;
+    color: rgb(12, 11, 11);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login .inputlogin input:focus~label,
+.login .inputlogin input:valid~label {
+    top: -18px;
+    left: 0;
+    color: #03a9f4;
+    font-size: 15px;
+}
+
+.box {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.textboxes {
+    margin: auto;
+}
+
+.inputTexto input,
+textarea {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    outline: none;
+    background: transparent;
+}
+
+form {
+    width: 40%;
+    height: 50%;
+    margin: auto;
+    background: #ffffff;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+}
+
+.form_envio {
+    background: #f6f8f8;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+}
+
+h3 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 15px;
+    border: none;
+}
+
+textarea {
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+#boton:hover {
+    cursor: pointer;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+.cerrar_datos_ingresados {
+    background: #FCFFA6;
+    color: rgb(3, 0, 0);
+    padding: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.modal-container,
+.modal_container2 {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+}
+
+.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal_contacto,
+.datos_ingresados_modal {
+    background-color: whitesmoke;
+    width: 300px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.modal h1 {
+    margin: 0;
+}
+
+.modal p {
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+.body-login2 {
+    background-color: rgba(180, 170, 157, 0.664);
 }

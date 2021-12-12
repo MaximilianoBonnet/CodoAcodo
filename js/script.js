@@ -1,69 +1,84 @@
 console.log("Mi página");
 
 let test = '';
-$(document).ready(function() {
 
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 0) {
-            $('header').addClass('header2');
-        } else {
-            $('header').removeClass('header2');
-        }
-    });
+var nombreYApellido = document.getElementById('nomYAp');
+var Email = document.getElementById('Email');
+var Telefono = document.getElementById('Telefono');
+var Comentario = document.getElementById('Comentario');
+var errorNombreYAp = document.getElementById('errorNombreYAp');
+var errorEmail = document.getElementById('errorEmail');
+var errorTelefono = document.getElementById('errorTelefono');
+var errorComentario = document.getElementById('errorComentario');
+errorNombreYAp.style.color = 'red';
+errorEmail.style.color = 'red';
+errorTelefono.style.color = 'red';
+errorComentario.style.color = 'red';
 
+function enviarFormulario() {
+    var mostrarModal = true;
+    if (nombreYApellido.value === null | nombreYApellido.value === '') {
+        errorNombreYAp.innerHTML = 'ingresa tu nombre y apellido';
+        mostrarModal = false;
+    } else {
+        errorNombreYAp.innerHTML = '';
+    }
+
+    if (Email.value === null | Email.value === '') {
+        errorEmail.innerHTML = 'ingresa tu email';
+        mostrarModal = false
+    } else {
+        errorEmail.innerHTML = '';
+    }
+
+    if (Telefono.value === null | Telefono.value === '') {
+        errorTelefono.innerHTML = 'ingresa tu telefono';
+        mostrarModal = false
+    } else {
+        errorTelefono.innerHTML = '';
+    }
+
+    if (Comentario.value === null | Comentario.value === '') {
+        errorComentario.innerHTML = 'ingresa un comentario';
+        mostrarModal = false
+    } else {
+        errorComentario.innerHTML = '';
+    }
+
+    if (mostrarModal) {
+        modal_container.classList.add('show');
+    }
+
+    return false;
+}
+
+const boton_enviar = document.getElementById('send');
+const modal_container = document.getElementById('modal_container');
+const modal_container2 = document.getElementById('modal_container2');
+const boton_close = document.getElementById('close');
+const boton_cerrar_datos_ingresados = document.getElementById('cerrar_datos_ingresados');
+
+
+boton_close.addEventListener('click', () => {
+    modal_container.classList.remove('show');
 });
 
-
-function testVal(dato) {
-    let text = document.createTextNode(dato);
-    element.appenchild(text)
-    document.getElementById("body:page").appendChild(element);
-}
-
-function enviarDatos() {
-    let nombre = document.getElementById("nombre");
-    let apellido = document.getElementById("apellido");
-    let email = document.getElementById("email");
-    let telefono = document.getElementById("telefono");
-    let textarea = document.getElementById("info");
-    let estado = true;
-    if (nombre.value == '') {
-        modalMostrar("Falta ingresar nombre \n");
-        estado = false;
-    } else if (apellido.value == '') {
-        modalMostrar("Falta ingresar apellido \n");
-        estado = false;
-    } else if (telefono.value == '') {
-        modalMostrar("Falta ingresar telefono \n");
-        estado = false;
-    } else if (email.value == '') {
-        amodalMostrart("Falta ingresar Email");
-        estado = false;
-    } else if (textarea.value == '') {
-        alemodalMostrarrt("Falta ingresar su consulta \n");
-        estado = false;
-    }
-    if (estado = true) {
-        almodalMostrarert("Mensaje enviado con éxito. \n Nos pondremos en contacto a la brevedad");
-    }
-
-}
+boton_enviar.addEventListener('click', () => {
+    modal_container.classList.remove('show');
+    var nombreYApDiv = document.getElementById('nombre_apellido_modal');
+    var emailModalDiv = document.getElementById('email_modal');
+    var telefonoModalDiv = document.getElementById('telefono_modal');
+    var comentarioModalDiv = document.getElementById('comentario_modal');
 
 
-function modalMostrar(title, description) {
-    let elementTitle = document.getElementById('exampleModalLabel');
-    title = document.createTextNode(title);
+    nombreYApDiv.innerHTML = nombreYApellido.value;
+    emailModalDiv.innerHTML = Email.value;
+    telefonoModalDiv.innerHTML = Telefono.value;
+    comentarioModalDiv.innerHTML = Comentario.value;
 
+    modal_container2.classList.add('show');
+});
 
-    let elementDescription = document.getElementById('textModal');
-    description = document.createTextNode(description);
-
-    elementTitle.innerHTML = '';
-    elementDescription.innerHTML = '';
-
-
-    var textModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {
-        keyboard: false
-    })
-    myModal.show();
-}
+boton_cerrar_datos_ingresados.addEventListener('click', () => {
+    modal_container2.classList.remove('show');
+});
